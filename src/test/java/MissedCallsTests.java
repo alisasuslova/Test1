@@ -51,7 +51,9 @@ public class MissedCallsTests {
 
         //act
         missedCalls.clear();
-        if (missedCalls.isEmpty()) {result = true;}
+        if (missedCalls.isEmpty()) {
+            result = true;
+        }
 
 
         assertEquals(expected, result);
@@ -60,7 +62,7 @@ public class MissedCallsTests {
     @Test
     public void testGetMissedCalls() {
 
-        Map<String , String> missedCalls = new HashMap<>();
+        Map<String, String> missedCalls = new HashMap<>();
         missedCalls.put("22.12.2021", "4445566");
         missedCalls.put("25.12.2021", "7773344");
         missedCalls.put("06.01.2022", "1112233");
@@ -71,43 +73,6 @@ public class MissedCallsTests {
         assertSame(expected, result);
 
     }
-
-
-
-
-
-//    @ParameterizedTest
-//    @MethodSource("source")
-//    public void testGetMissedCalls(Map<String, String> missedCalls) {
-//
-//        boolean expected = true;
-//            //boolean expected = missedCalls.containsKey("22.12.2021");
-//           // bollean teas2 = missedCalls.containsValue("3333333");
-//
-//        //act
-//        boolean result = missedCalls.containsKey("22.12.2021");
-//
-//
-//
-//        //assert
-////        assertEquals(expected, result);
-////        assertTrue(expected, result);
-//        assertSame(expected, result);
-//
-//    }
-//
-//    private static Map<String , String>  source() {
-//        /*arrange*/
-//        Map<String , String> missedCalls = new HashMap<>();
-//        missedCalls.put("22.12.2021", "4445566");
-//        missedCalls.put("25.12.2021", "7773344");
-//        missedCalls.put("06.01.2022", "1112233");
-//
-//        return missedCalls;
-//    }
-
-
-
 
 
 }
