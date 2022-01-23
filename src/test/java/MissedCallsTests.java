@@ -48,7 +48,9 @@ public class MissedCallsTests {
         missedCalls.put(localDateTime, "4445566");
         missedCalls.put(localDateTime, "7773344");
         missedCalls.put(localDateTime, "1112233");
-        
+        boolean check = missedCalls.isEmpty(); //false
+        System.out.println(check + ", В списке есть контакты");
+
         missedCalls.clear();
 
         assertEquals(expected, missedCalls.isEmpty());
