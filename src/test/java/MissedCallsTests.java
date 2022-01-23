@@ -38,6 +38,7 @@ public class MissedCallsTests {
         System.out.println("Tests completed");
     }
 
+
     @Test
     public void testDelMissedCalls() {
         //arrange
@@ -47,16 +48,10 @@ public class MissedCallsTests {
         missedCalls.put(localDateTime, "4445566");
         missedCalls.put(localDateTime, "7773344");
         missedCalls.put(localDateTime, "1112233");
-        boolean result = false;
-
-        //act
+        
         missedCalls.clear();
-        if (missedCalls.isEmpty()) {
-            result = true;
-        }
 
-
-        assertEquals(expected, result);
+        assertEquals(expected, missedCalls.isEmpty());
     }
 
     @Test
