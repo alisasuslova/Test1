@@ -20,7 +20,7 @@ public class MissedCallsTests {
     @BeforeEach
     public void init() {
         System.out.println("Test started");
-        sut = new MissedCallsTests();  //для каждого нового теста создается новый объект
+        sut = new MissedCallsTests();
     }
 
     @BeforeAll
@@ -41,7 +41,7 @@ public class MissedCallsTests {
 
     @Test
     public void testDelMissedCalls() {
-        //arrange
+
         Map<LocalDateTime, String> missedCalls = new TreeMap<>();
         LocalDateTime localDateTime = LocalDateTime.now();
         boolean expected = true;
@@ -60,14 +60,22 @@ public class MissedCallsTests {
     public void testGetMissedCalls() {
 
         Map<String, String> missedCalls = new HashMap<>();
-        missedCalls.put("22.12.2021", "4445566");
+        missedCalls.put("22.12.2021", "8888888");
         missedCalls.put("25.12.2021", "7773344");
-        missedCalls.put("06.01.2022", "1112233");
+        missedCalls.put("06.01.2022", "5555555");
+
+        Map<String, Contact> contacts = new HashMap<>();
+        contacts.put("3333333", new Contact("surname1", "name1", "3333333"));
+        contacts.put("7773344", new Contact("surname2", "name2", "7773344"));
+        contacts.put("4444444", new Contact("surname3", "name3", "4444444"));
+
+        String testNumber = "7773344";
         boolean expected = true;
+        boolean result = false;
 
-        boolean result = missedCalls.containsKey("22.12.2021");
+        if(missedCalls.containsValue(testNumber) == contacts.containsKey(testNumber)) {result = true;}
 
-        assertSame(expected, result);
+        assertEquals(expected, result);
 
     }
 

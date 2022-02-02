@@ -31,17 +31,18 @@ public class ContactsTests {
     }
 
     @Test
-    public void testGetByPhone() {
-        //arrange
+    public void testAddContact() {
+
         Map<String, Contact> contacts = new HashMap<>();
-        String phone = "7773366";
-        Contact contact = new Contact("Test1", "Test2", phone);
-        contacts.put(phone, contact);
+        Contact contact1 = new Contact("surname1", "name1", "phone1");
+        Contact contact2 = new Contact("surname2", "name2", "phone2");
+        contacts.put("phone1", contact1);
+        contacts.put("phone2", contact2);
+        int expected = 2;
 
-        //act
-        Contact result = contacts.get(phone);
+        int result = contacts.size();
 
-        //assert
-        assertEquals(contact, result);
+        assertEquals(expected, result);
     }
+
 }
