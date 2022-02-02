@@ -5,6 +5,7 @@ import org.junit.jupiter.params.provider.MethodSource;
 
 import java.time.LocalDateTime;
 import java.time.chrono.ChronoLocalDateTime;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.TreeMap;
@@ -79,5 +80,19 @@ public class MissedCallsTests {
 
     }
 
+    @Test
+    public void testAddMissedCalls() {
+
+        String localDateTime = "22.10.2021";
+        String testPhone = "1111111";
+        Map<String, String> missedCalls = new TreeMap<>();
+        missedCalls.put(localDateTime, testPhone);
+        String expected = "{22.10.2021=1111111}";
+        String result = missedCalls.toString();
+
+        assertEquals(expected, result);
+
+
+    }
 
 }
